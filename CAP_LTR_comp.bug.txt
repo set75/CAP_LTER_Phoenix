@@ -1,0 +1,17 @@
+model
+{
+  for (i in 1:N){
+    logit(p[i]) <- alpha + b.1*pRain[i] + b.4*EF[i] + 
+      b.5*LE[i] + b.6*SH[i] + b.7*Uh[i] + b.8*Uz[i] + b.9*Temp[i] + b.10*Vap[i]
+    Rain[i] ~ dbern(p[i])
+  }
+  alpha ~ dnorm(0.0,1.0E-4)
+  b.1 ~ dnorm(0.0,1.0E-4)
+  b.4 ~ dnorm(0.0,1.0E-4)
+  b.5 ~ dnorm(0.0,1.0E-4)
+  b.6 ~ dnorm(0.0,1.0E-4)
+  b.7 ~ dnorm(0.0,1.0E-4)
+  b.8 ~ dnorm(0.0,1.0E-4)
+  b.9 ~ dnorm(0.0,1.0E-4)
+  b.10 ~ dnorm(0.0,1.0E-4)
+}
